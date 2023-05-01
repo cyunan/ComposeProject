@@ -27,7 +27,6 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.selects.select
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
@@ -52,10 +51,10 @@ fun MainTabPage(navController: NavHostController) {
             modifier = Modifier.weight(1f)
         ) { page ->
             when (page) {
-                0 -> MainPage("新闻")
-                1 -> MainPage("视频")
-                2 -> MainPage("音乐")
-                3 -> MainPage("我的")
+                0 -> MainNewsPage("新闻")
+                1 -> MainVideoPage()
+//                2 -> MainPage("音乐")
+//                3 -> MainPage("我的")
             }
         }
         BottomNavigationCompose(pagerState = pageState)

@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.cyn.composeproject">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".AppApplication"
         android:allowBackup="true"
@@ -13,12 +15,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeProject"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".VideoDetailActivity"
+            android:exported="false"
+            android:label="@string/title_activity_video_detail"
+            android:theme="@style/Theme.ComposeProject" />
+        <activity
+            android:name=".NewsDetailActivity"
+            android:exported="false"
+            android:label="@string/title_activity_news_detail"
+            android:theme="@style/Theme.ComposeProject" />
         <activity
             android:name=".WelcomeActivity"
             android:exported="true"
             android:label="@string/title_activity_welcome"
-            android:theme="@style/Theme.ComposeProject" >
+            android:theme="@style/Theme.ComposeProject">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,10 +42,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ComposeProject">
-
-        </activity>
-
+            android:theme="@style/Theme.ComposeProject" />
     </application>
 
 </manifest>

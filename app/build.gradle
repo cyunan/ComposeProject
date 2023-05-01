@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+//    id 'kotlin-android-extensions'
 }
 
 android {
@@ -43,8 +45,11 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
-6
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.6.10'
@@ -101,4 +106,7 @@ dependencies {
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
     // DataStore
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
+//    implementation "org.jetbrains.kotlinx:kotlinx-parcelize-runtime:1.2.1"
 }
